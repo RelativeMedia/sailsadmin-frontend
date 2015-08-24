@@ -1,0 +1,60 @@
+{
+  "development":{
+    "AccessLevels": {
+      "groups": [
+        {
+          "id": 1,
+          "name": "user"
+        },
+        {
+          "id": 2,
+          "name": "admin"
+        }
+      ],
+      "roles": {
+        "public": ["*"],
+        "user": ["user", "admin"],
+        "admin": ["admin"]
+      }
+    },
+    "Config": {
+      "debugMode": true,
+      "api": {
+        "ssl": false,
+        "host": "192.168.50.101",
+        "port": "1337",
+        "version": "v1",
+        "url": "http://192.168.50.101:1337"
+      }
+    }
+  },
+  "production":{
+    "AccessLevels": {
+      "groups": [
+        {
+          "id": 1,
+          "name": "user"
+        },
+        {
+          "id": 2,
+          "name": "admin"
+        }
+      ],
+      "roles": {
+        "public": ["*"],
+        "user": ["user", "admin"],
+        "admin": ["admin"]
+      }
+    },
+    "Config": {
+      "debugMode": false,
+      "api": {
+        "ssl": false,
+        "host": "sapinfrastructure.srp.gov",
+        "port": "8000",
+        "version": "v1",
+        "url": "http://sapinfrastructure.srp.gov:8000"
+      }
+    }
+  }
+}

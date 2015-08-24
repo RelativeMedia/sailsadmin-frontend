@@ -1,0 +1,14 @@
+<navbar></navbar>
+<div class="spinnerContainer" ng-show="spinnerSpinning === true">
+  <span us-spinner="{radius:30, width:8, length: 16, color: white}" spinner-key="spinner-1"></span>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <div ng-sidebar></div>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <div ui-view="content"></div>
+    </div>
+  </div>
+</div>

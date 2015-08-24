@@ -1,0 +1,62 @@
+{
+  "development":{
+    "AccessLevels": {
+      "groups": [
+        {
+          "id": 1,
+          "name": "user"
+        },
+        {
+          "id": 2,
+          "name": "admin"
+        }
+      ],
+      "roles": {
+        "public": ["*"],
+        "user": ["user", "admin"],
+        "admin": ["admin"]
+      }
+    },
+    "Config": {
+      "pageTitle": "Sails Admin",
+      "debugMode": true,
+      "api": {
+        "ssl": false,
+        "host": "localhost",
+        "port": "1337",
+        "version": "v1",
+        "url": "http://localhost:1337"
+      }
+    }
+  },
+  "production":{
+    "AccessLevels": {
+      "groups": [
+        {
+          "id": 1,
+          "name": "user"
+        },
+        {
+          "id": 2,
+          "name": "admin"
+        }
+      ],
+      "roles": {
+        "public": ["*"],
+        "user": ["user", "admin"],
+        "admin": ["admin"]
+      }
+    },
+    "Config": {
+      "pageTitle": "Sails Admin",
+      "debugMode": false,
+      "api": {
+        "ssl": false,
+        "host": "sapinfrastructure.srp.gov",
+        "port": "8000",
+        "version": "v1",
+        "url": "http://sapinfrastructure.srp.gov:8000"
+      }
+    }
+  }
+}

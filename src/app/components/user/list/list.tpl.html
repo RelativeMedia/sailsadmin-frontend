@@ -1,0 +1,32 @@
+<h1>User List</h1>
+<table class="table table-striped" ng-table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>username</th>
+      <th>email</th>
+      <th>Access Level</th>
+      <th>Created At</th>
+      <th>Last Login</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users.results">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ getUserGroup(user.accessLevel).name }}</td>
+      <td>{{ user.createdAt | date:'medium' }}</td>
+      <td>{{ user.updatedAt | date:'medium' }}</td>
+      <td class="align-middle">
+        <ul class="inline-list">
+          <li><button class="btn btn-sm btn-warning" ng-click="editUser($index, user)"><i class="fa fa-lg fa-pencil"></i></button></li>
+          <li><button class="btn btn-sm btn-danger" text="are you sure you want to delete the item '{{user.username}}'?" title="Delete User" confirm="deleteUser($index, user)"><i class="fa fa-lg fa-trash"></i></button></li>
+          <li><button class="btn btn-sm btn-info" alt="Reset Password" ng-click="resetPassword($index, user)"><i class="fa fa-lg fa-key"></i></button></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary" ng-click="createUser()">Create New User</button>

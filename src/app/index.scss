@@ -1,0 +1,62 @@
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import '_variables.scss';
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+@import '_bootswatch.scss';
+
+
+body{
+  padding-top:50px;
+}
+
+[ng-click],
+[data-ng-click],
+[ui-sref],
+[x-ng-click],
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.inline-list{
+  list-style:none;
+
+  li{
+    display: inline;
+  }
+}
+.grid-align{
+  text-align: center;
+}
+
+.table-condensed > thead > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > th,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > th,
+.table-condensed > tfoot > tr > td {
+  padding: 1px;
+}
+.align-middle{
+  text-align: center;
+}
+.align-right{
+  text-align: right;
+}
+.spinnerContainer {
+  background-color: rgba(0,0,0, 0.45);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+}
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

@@ -1,0 +1,20 @@
+<div class="col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-sm-6 col-md-6 col-lg-6">
+  <div ng-alerts></div>
+  <div class="well login-box">
+    <form class="form" ng-submit="login()" name="loginForm">
+      <legend>Admin Panel</legend>
+      <div class="form-group" ng-class="{ 'has-error': loginForm.username.$invalid && loginForm.username.$dirty }">
+        <label for="username">Username</label>
+        <input id="username" name="username" placeholder="Username" type="text" class="form-control input-lg" ng-model="user.username" required/>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': loginForm.password.$invalid && loginForm.password.$dirty }">
+        <label for="password">Password</label>
+        <input id="password" name="password" placeholder="Password" type="password" class="form-control input-lg" ng-model="user.password" required/>
+      </div>
+      <div class="form-group text-center">
+        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login" ng-disabled="loginForm.$invalid || submitDisabled" />
+        <a ui-sref="auth.register" class="btn">Register</a><a ui-sref="auth.register" class="btn">Forgot Password</a>
+      </div>
+    </form>
+  </div>
+</div>

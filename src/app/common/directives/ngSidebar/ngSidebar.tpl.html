@@ -1,0 +1,9 @@
+<ul class="nav nav-sidebar">
+  <li
+   ng-repeat="link in links",
+   ng-if="isAuthorized(link.accessLevels)"
+   ng-class="{ active : isCurrentState(link._state.name) }"
+  >
+    <a ui-sref="{{link._state.name}}">{{link.sidebar.display}}</a>
+  </li>
+</ul>

@@ -1,0 +1,62 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="myModalLabel">Create User</h4>
+</div>
+<div class="modal-body">
+  <form class="form" name="registerForm" ng-submit="ok()">
+    <div class="row">
+      <div class="form-group col-sm-6" ng-class="{ 'has-error': registerForm.firstName.$dirty && registerForm.firstName.$invalid, 'has-success': registerForm.firstName.$dirty && registerForm.firstName.$valid }">
+        <label for="firstName">First Name</label>
+        <input class="form-control input-lg" type="text" name="firstName" ng-model="newUser.firstName" required placeholder="Enter Your first Name">
+        <span ng-show="registerForm.firstName.$dirty && registerForm.firstName.$invalid-required" class="help-block">please enter your First Name.</span>
+      </div>
+      <div class="form-group col-sm-6" ng-class="{ 'has-error': registerForm.lastName.$dirty && registerForm.lastName.$invalid, 'has-success': registerForm.lastName.$dirty && registerForm.lastName.$valid }">
+        <label for="lastName">Last Name</label>
+        <input class="form-control input-lg" type="text" name="lastName" ng-model="newUser.lastName" required placeholder="Enter Your Last Name">
+        <span ng-show="registerForm.lastName.$dirty && registerForm.lastName.$invalid-required" class="help-block">please enter your Last Name.</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-sm-5" ng-class="{ 'has-error': registerForm.username.$dirty && registerForm.username.$invalid, 'has-success': registerForm.username.$dirty && registerForm.username.$valid }">
+        <label for="username">Username</label>
+        <input class="form-control input-lg" type="text" name="username" ng-model="newUser.username" required placeholder="Enter a username">
+        <span ng-show="registerForm.username.$dirty && registerForm.username.$invalid-required" class="help-block">please enter a username.</span>
+      </div>
+
+      <div class="form-group col-sm-7" ng-class="{ 'has-error': registerForm.email.$dirty && registerForm.email.$invalid, 'has-success': registerForm.email.$dirty && registerForm.email.$valid }">
+        <label for="email">Email Address</label>
+        <input class="form-control input-lg" type="email" name="email" ng-model="newUser.email" required placeholder="Enter your email">
+        <span ng-show="registerForm.email.$dirty && registerForm.email.$invalid-required" class="help-block">please enter a email.</span>
+        <span ng-show="registerForm.email.$dirty && registerForm.email.$invalid-email" class="help-block">please enter a valid email address.</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label>Access Level</label>
+        <select class="form-control input-lg" ng-model="newUser.accessLevel" ng-options="level.id as level.name for level in groups"></select>
+      </div>
+
+      <div class="form-group col-sm-8">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-sm-6" ng-class="{ 'has-error': registerForm.password.$dirty && registerForm.password.$invalid, 'has-success': registerForm.password.$dirty && registerForm.password.$valid }">
+        <label for="password">Password</label>
+        <input class="form-control input-lg" type="password" name="password" ng-model="newUser.password" required placeholder="Enter a password" minlength="8">
+        <span ng-show="registerForm.password.$dirty && registerForm.password.$invalid-minlength" class="help-block">Your password must be at least 8 characters long.</span>
+        <span ng-show="registerForm.password.$dirty && registerForm.password.$invalid-required" class="help-block">please enter a password.</span>
+      </div>
+      <div class="form-group col-sm-6" ng-class="{ 'has-error': registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$invalid, 'has-success': registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$valid }">
+        <label for="password">Confirm Password</label>
+        <input class="form-control input-lg" type="password" name="confirmPassword" ng-model="newUser.confirmPassword" required compare-to="newUser.password" placeholder="Confirm Password">
+        <span ng-show="registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$invalid-compare-to" class="help-block">looks like your passwords don't match!</span>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger" ng-click="close()">Cancel</button>
+  <button type="submit" name="submit" class="btn btn-success" ng-disabled="registerForm.$invalid || submitDisabled" ng-click="ok()">Create</button>
+</div>
