@@ -52,10 +52,10 @@
       "debugMode": false,
       "api": {
         "ssl": false,
-        "host": "sapinfrastructure.srp.gov",
+        "host": "sailsadmin.local",
         "port": "8000",
         "version": "v1",
-        "url": "http://sapinfrastructure.srp.gov:8000"
+        "url": "http://sailsadmin.local:8000"
       }
     }
   }
